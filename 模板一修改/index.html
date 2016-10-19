@@ -1,0 +1,310 @@
+﻿
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<title>科技情报资源导航</title>
+<meta name="keywords" content="科技情报资源导航">
+<meta name="description" content="科技情报资源导航">
+
+<link rel="stylesheet" href="css/metro.css">
+<link rel="stylesheet" href="css/nanoscroller.css">
+<script type="text/javascript" src="script/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="script/jquery.nanoscroller.js"></script>
+
+<!--解决在ie6下png透明-->
+<!--[if IE 6]>
+  <script type="text/javascript" src="script/DD_belatedPNG.js" ></script> 
+  <script type="text/javascript">
+  DD_belatedPNG.fix('ul,li,img');
+  </script>
+<![endif]-->
+<script type="text/javascript" src="script/jquery.carousel.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    var box_h=$("#metro_box").height();
+    var box_w=$("#metro_box").width();
+    $("#metro_box").css("margin-top",(($(window).height()-box_h)/2)-10+"px");
+    //var img_h=$(".arr_left img").height();
+    //var img_w=$(".arr_left img").width();
+    //$(".prev").css("position","absolute").css("left","10px").css("top",($(window).height()-img_h)/2);
+    //$(".next").css("position","absolute").css("right","10px").css("top",($(window).height()-img_h)/2);
+    //链接在新窗口打开
+    $(".a_link dd a").attr("target","_blank");
+    $(".a_link ul li>a").hover(function(){
+      var a_href=$(this).attr("href");      
+      $(this).siblings().find("a").attr("href",a_href);
+    });
+    
+    //切屏-----------------------------------------------------------------
+    $("#top dl dd a").click(function(){
+      var now_class=$(this).attr("class");  
+      $("#top dl dd a.a_index").attr("class","a_index");
+      $("#top dl dd a.a_mzdw").attr("class","a_mzdw");
+      $("#top dl dd a.a_spyy").attr("class","a_spyy");
+      $("#top dl dd a.a_xwzx").attr("class","a_xwzx");
+      $("#top dl dd a.a_gwtb").attr("class","a_gwtb");
+      $("#top dl dd a.a_yxyl").attr("class","a_yxyl");
+      $("#top dl dd a.a_sygj").attr("class","a_sygj");
+      $("#top dl dd a.a_yszy").attr("class","a_yszy");
+      $(this).attr("class",now_class).addClass(now_class+"_h");     
+      var index=$(this).index();
+      $("#metro_box dd").hide();
+      $("#metro_box dd").eq(index).toggle(100);
+      if(index==1){
+        $("body").attr("class","bg");  
+      }
+      switch (index){
+        case 0:
+          $("body").attr("class","");           
+          break;
+        case 1:
+          $("body").attr("class","bg");          
+          break;
+        case 2:
+          $("body").attr("class","bg");            
+          break;
+        case 3:
+          $("body").attr("class","bg");          
+          break;
+        case 4:
+          $("body").attr("class","bg");          
+          break;
+        case 5:
+          $("body").attr("class","bg");            
+          break;  
+        case 6:
+          $("body").attr("class","bg");            
+          break;  
+        default :
+          $("body").attr("class","bg");            
+      }
+      <!--[if IE 6]>$("#metro_box dd").eq(index).show(300);<![endif]-->     
+    });
+  });
+</script>
+<script type="text/javascript">
+  
+  $(function(){
+    $(".nano").nanoScroller({alwaysVisible: true});
+    $("#bottom").click(function(){
+      $(".nano").nanoScroller({scroll:'bottom'});   
+    });
+    $("#top").click(function(){
+      $(".nano").nanoScroller({scroll:'top'});
+    });
+  });
+</script>
+
+</head>
+<body class="bg">
+<!--头部导航开始-->
+<div id="top">
+  <dl>
+    <dt><a href="#" target="_blank">科技资源情报导航</a></dt>
+    <dd>
+      <a class="a_index a_index_h">首页</a>
+      <a class="a_mzdw">名站导航</a>
+      <a class="a_spyy">视频音乐</a>
+      <a class="a_xwzx">新闻资讯</a>
+      <a class="a_gwtb">购物淘宝</a>
+      <a class="a_yxyl">游戏娱乐</a>
+      <a class="a_sygj">实用工具</a>
+      <a class="a_yszy">影视资源</a>
+      <a class="a_more a_more_h" href="#" target="_blank">更多</a></dd>
+  </dl>
+</div>
+<!--头部导航结束--> 
+<!--logo区开始-->
+<div id="metro_box" class="a_link" style="margin-top: 107px;">
+  <dl>
+    <dd style="display: block;" class="totalNavigation">
+    <!--首页-->
+      <div id="about" class="nano">
+          <div class="nano-content">
+            <ul>
+               <li class="one" id="logo_001"><a href="http://www.epsnet.com.cn/" target="_blank"><img src="images/a-01.png" width="240" height="120" alt="EPS数据平台"></a><span><a href="http://www.epsnet.com.cn/" target="_blank">EPS数据平台</a></span></li>
+               <li id="logo_002"><a href="http://proquest.calis.edu.cn/" target="_blank"><img src="images/a-02.png" width="240" height="120" alt=""></a><span><a href="http://proquest.calis.edu.cn/" target="_blank">Dialog数据库</a></span></li>
+               <li id="logo_003"><a href="https://global.factiva.com/factivalogin/login.asp?productname=global" target="_blank"><img src="images/a-03.png" width="240" height="120" alt=""></a><span><a href="https://global.factiva.com/factivalogin/login.asp?productname=global" target="_blank">道琼斯数据库</a></span></li>
+               <li class="four" id="logo_004"><a href="http://gpd.sunwayinfo.com.cn/" target="_blank"><img src="images/a-04.png" width="240" height="120" alt=""></a><span><a href="http://gpd.sunwayinfo.com.cn/" target="_blank">全球产品样品数据库</a></span></li>
+               <li class="one" id="logo_005"><a href="https://www.orbit.com/" target="_blank"><img src="images/b-01.png" width="240" height="120" alt="youku"></a><span><a href="https://www.orbit.com/" target="_blank">Orbit专利分析系统</a></span></li>
+               <li id="logo_006"><a href="http://www.all-patent.com/" target="_blank"><img src="images/b-02.png" width="240" height="120" alt="qiyi"></a><span><a href="http://www.all-patent.com/" target="_blank">恒和顿专利信息平台</a></span></li>
+               <li id="logo_007"><a href="http://www.patentstar.com.cn/frmLogin.aspx" target="_blank"><img src="images/b-03.png" width="240" height="120" alt=""></a><span><a href="http://www.patentstar.com.cn/frmLogin.aspx" target="_blank">专利之星检索系统</a></span></li>
+               <li class="four" id="logo_008"><a href="http://www.drcnet.com.cn/www/integrated/" target="_blank"><img src="images/c-01.png" width="240" height="120" alt="国研网"></a><span><a href="http://www.drcnet.com.cn/www/integrated/" target="_blank">国研网</a></span></li>
+               <li class="one" id="logo_009"><a href="http://emerging.drcnet.com.cn/www/emerging/" target="_blank"><img src="images/c-02.png" width="240" height="120" alt="sohu"></a><span><a href="http://emerging.drcnet.com.cn/www/emerging/" target="_blank">国研网新兴产业数据库</a></span></li>
+               <li id="logo_010"><a href="http://www.chinainfo.gov.cn/" target="_blank"><img src="images/c-03.png" width="240" height="120" alt=""></a><span><a href="http://www.chinainfo.gov.cn/" target="_blank">中国科技情报网</a></span></li>
+               <li id="logo_011"><a href="http://sciencechina.cn/" target="_blank"><img src="images/d-01.png" width="240" height="120" alt="中国科学文献服务系统"></a><span><a href="http://sciencechina.cn/" target="_blank">中国科学文献服务系统</a></span></li>
+               <li class="four" id="logo_012"><a href="http://zlf.cqvip.com/index.aspx?returnUrl=" target="_blank"><img src="images/d-02.png" width="240" height="120" alt="维普智立方"></a><span><a href="http://zlf.cqvip.com/index.aspx?returnUrl=" target="_blank">维普智立方</a></span></li>
+               <li class="one" id="logo_013"><a href="http://ss.zhizhen.com/" target="_blank"><img src="images/d-03.png" width="240" height="120" alt="超星发现"></a><span><a href="http://ss.zhizhen.com/" target="_blank">超星发现</a></span></li>
+               <li id="logo_014"><a href="http://stads.infosoft.cc/" target="_blank"><img src="images/d-04.png" width="240" height="120" alt=""></a><span><a href="http://stads.infosoft.cc/" target="_blank">万方创新助手</a></span></li>
+               <li id="logo_015"><a href="http://cxcy.chaoxing.com/portal" target="_blank"><img src="images/e-01.png" width="240" height="120" alt=""></a><span><a href="http://cxcy.chaoxing.com/portal" target="_blank">超星数字创新创业</a></span></li>
+               <li class="four" id="logo_016"><a href="http://erya.mooc.chaoxing.com/" target="_blank"><img src="images/e-02.png" width="240" height="120" alt="超星尔雅通识课"></a><span><a href="http://erya.mooc.chaoxing.com/" target="_blank">超星尔雅通识课</a></span></li>
+               <li class="one" id="logo_017"><a href="http://video.chaoxing.com/classify_0_3_0_0.shtml" target="_blank"><img src="images/e-03.png" width="240" height="120" alt=""></a><span><a href="http://video.chaoxing.com/classify_0_3_0_0.shtml" target="_blank">超星学术视频</a></span></li>
+               <li id="logo_018"><a href="http://strs.gdstc.gov.cn/" target="_blank"><img src="images/f-01.png" width="240" height="120" alt=""></a><span><a href="http://strs.gdstc.gov.cn/" target="_blank">广东省科技报告服务平台</a></span></li>
+               <li id="logo_019"><a href="http://kxjc.gdinfo.net/" target="_blank"><img src="images/f-02.png" width="240" height="120" alt="广东科技决策支撑平台"></a><span><a href="http://kxjc.gdinfo.net/" target="_blank">广东科技决策支撑平台</a></span></li>
+               <li class="four" id="logo_020"><a href="#" target="_blank"><img src="images/f-03.png" width="240" height="120" alt=""></a><span><a href="#" target="_blank">广东科技成果全文数据库</a></span></li>
+               <li class="one" id="logo_021"><a href="#" target="_blank"><img src="images/f-04.png" width="240" height="120" alt="广东科技档案数据库"></a><span><a href="#" target="_blank">广东科技档案数据库</a></span></li>
+               <li id="logo_022"><a href="http://www.gdstl.net/" target="_blank"><img src="images/g-01.png" width="240" height="120" alt=""></a><span><a href="http://www.gdstl.net/" target="_blank">广东省科技文献共享平台</a></span></li>
+               <li id="logo_023"><a href="http://gz.nstl.gov.cn/" target="_blank"><img src="images/g-02.png" width="240" height="120" alt="NSTL广州服务站共享平台"></a><span><a href="http://gz.nstl.gov.cn/" target="_blank">NSTL广州服务站共享平台</a></span></li>
+               <li class="four" id="logo_024"><a href="http://www.ideahome.com.cn/" target="_blank"><img src="images/g-03.png" width="240" height="120" alt=""></a><span><a href="http://www.ideahome.com.cn/" target="_blank">外刊资源服务系统</a></span></li>
+               <li class="one" id="logo_025"><a href="http://www.wanfangdata.com.cn/" target="_blank"><img src="images/g-04.png" width="240" height="120" alt=""></a><span><a href="http://www.wanfangdata.com.cn/" target="_blank">万方数据知识服务平台</a></span></li>
+               <li id="logo_026"><a href="http://www.cqvip.com/" target="_blank"><img src="images/g-05.png" width="240" height="120" alt=""></a><span><a href="http://www.cqvip.com/" target="_blank">维普资讯网</a></span></li>
+               <li id="logo_027"><a href="http://www.cnki.net/" target="_blank"><img src="images/g-06.png" width="240" height="120" alt=""></a><span><a href="http://www.cnki.net/" target="_blank">中国知网</a></span></li>
+               <li class="four" id="logo_007" style="background:rgba(0, 0, 0, 0.5)"></li>
+          </ul>          
+        </div>
+      </div>
+    </dd>
+    <dd style="display: none;">
+    <!--商业-->
+      <ul>
+        <li class="one" id="logo_001"><a href="http://www.epsnet.com.cn/" target="_blank"><img src="images/a-01.png" width="240" height="120" alt="EPS数据平台"></a><span><a href="http://www.epsnet.com.cn/" target="_blank">EPS数据平台</a></span></li>
+        <li id="logo_002"><a href="http://proquest.calis.edu.cn/" target="_blank"><img src="images/a-02.png" width="240" height="120" alt=""></a><span><a href="http://proquest.calis.edu.cn/" target="_blank">Dialog数据库</a></span></li>
+        <li id="logo_003"><a href="https://global.factiva.com/factivalogin/login.asp?productname=global" target="_blank"><img src="images/a-03.png" width="240" height="120" alt=""></a><span><a href="https://global.factiva.com/factivalogin/login.asp?productname=global" target="_blank">道琼斯数据库</a></span></li>
+        <li class="four" id="logo_004"><a href="http://gpd.sunwayinfo.com.cn/" target="_blank"><img src="images/a-04.png" width="240" height="120" alt=""></a><span><a href="http://gpd.sunwayinfo.com.cn/" target="_blank">全球产品样品数据库</a></span></li>
+        <li class="one" id="logo_005" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_006" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_007" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="four" id="logo_008" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="one" id="logo_009" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_010" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_011" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="four" id="logo_012" style="background:rgba(0, 0, 0, 0.5)"></li>
+        
+        
+        
+        
+      </ul>
+    </dd>
+  
+   <dd style="display: none;">
+   <!--专利分析-->
+      <ul>
+        <li class="one" id="logo_005"><a href="https://www.orbit.com/" target="_blank"><img src="images/b-01.png" width="240" height="120" alt="youku"></a><span><a href="https://www.orbit.com/" target="_blank">Orbit专利分析系统</a></span></li>
+        <li id="logo_006"><a href="http://www.all-patent.com/" target="_blank"><img src="images/b-02.png" width="240" height="120" alt="qiyi"></a><span><a href="http://www.all-patent.com/" target="_blank">恒和顿专利信息平台</a></span></li>
+        <li id="logo_007"><a href="http://www.patentstar.com.cn/frmLogin.aspx" target="_blank"><img src="images/b-03.png" width="240" height="120" alt=""></a><span><a href="http://www.patentstar.com.cn/frmLogin.aspx" target="_blank">专利之星检索系统</a></span></li>
+        <li class="four" id="logo_008" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="one" id="logo_009" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_010" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_011" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="four" id="logo_012" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="one" id="logo_013" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_014" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_015" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="four" id="logo_016" style="background:rgba(0, 0, 0, 0.5)"></li>
+      </ul>
+    </dd>
+    <dd style="display: none;">
+    <!--战略情报-->
+      <ul>
+        <li class="one" id="logo_008"><a href="http://www.drcnet.com.cn/www/integrated/" target="_blank"><img src="images/c-01.png" width="240" height="120" alt="Proquest"></a><span><a href="http://www.drcnet.com.cn/www/integrated/" target="_blank">国研网</a></span></li>
+        <li id="logo_009"><a href="http://emerging.drcnet.com.cn/www/emerging/" target="_blank"><img src="images/c-02.png" width="240" height="120" alt="sohu"></a><span><a href="http://emerging.drcnet.com.cn/www/emerging/" target="_blank">国研网新兴产业数据库</a></span></li>
+        <li id="logo_010"><a href="http://www.chinainfo.gov.cn/" target="_blank"><img src="images/c-03.png" width="240" height="120" alt=""></a><span><a href="http://www.chinainfo.gov.cn/" target="_blank">中国科技情报网</a></span></li>
+        <li class="four" id="logo_011" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="one" id="logo_012" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_006" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_007" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="four" id="logo_008" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="one" id="logo_009" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_010" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_011" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="four" id="logo_012" style="background:rgba(0, 0, 0, 0.5)"></li>
+        
+        
+        
+        
+      </ul>
+    </dd>
+    <dd style="display: none;">
+    <!--知识发现-->
+      <ul>
+        <li class="one" id="logo_011"><a href="http://sciencechina.cn/" target="_blank"><img src="images/d-01.png" width="240" height="120" alt="中国科学文献服务系统"></a><span><a href="http://sciencechina.cn/" target="_blank">中国科学文献服务系统</a></span></li>
+        <li id="logo_012"><a href="http://zlf.cqvip.com/index.aspx?returnUrl=" target="_blank"><img src="images/d-02.png" width="240" height="120" alt="维普智立方"></a><span><a href="http://zlf.cqvip.com/index.aspx?returnUrl=" target="_blank">维普智立方</a></span></li>
+        <li id="logo_013"><a href="http://ss.zhizhen.com/" target="_blank"><img src="images/d-03.png" width="240" height="120" alt="超星发现"></a><span><a href="http://ss.zhizhen.com/" target="_blank">超星发现</a></span></li>
+        <li class="four" id="logo_014"><a href="http://stads.infosoft.cc/" target="_blank"><img src="images/d-04.png" width="240" height="120" alt=""></a><span><a href="http://stads.infosoft.cc/" target="_blank">万方创新助手</a></span></li>
+        <li class="one" id="logo_017" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_006" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_007" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="four" id="logo_008" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="one" id="logo_009" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_010" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_011" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="four" id="logo_012" style="background:rgba(0, 0, 0, 0.5)"></li>
+        
+        
+        
+        
+      </ul>
+    </dd>
+    <dd style="display: none;">
+    <!--创新创业-->
+      <ul>
+        <li class="one" id="logo_015"><a href="http://cxcy.chaoxing.com/portal" target="_blank"><img src="images/e-01.png" width="240" height="120" alt=""></a><span><a href="http://cxcy.chaoxing.com/portal" target="_blank">超星数字创新创业</a></span></li>
+        <li id="logo_016"><a href="http://erya.mooc.chaoxing.com/" target="_blank"><img src="images/e-02.png" width="240" height="120" alt="超星尔雅通识课"></a><span><a href="http://erya.mooc.chaoxing.com/" target="_blank">超星尔雅通识课</a></span></li>
+        <li id="logo_017"><a href="http://video.chaoxing.com/classify_0_3_0_0.shtml" target="_blank"><img src="images/e-03.png" width="240" height="120" alt=""></a><span><a href="http://video.chaoxing.com/classify_0_3_0_0.shtml" target="_blank">超星学术视频</a></span></li>
+        <li class="four" id="logo_018" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="one" id="logo_005" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_006" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_007" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="four" id="logo_008" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="one" id="logo_009" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_010" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_011" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="four" id="logo_012" style="background:rgba(0, 0, 0, 0.5)"></li>
+        
+        
+        
+        
+      </ul>
+    </dd>
+    <dd style="display: none;">
+    <!--特色自建-->
+      <ul>
+        <li class="one" id="logo_018"><a href="http://strs.gdstc.gov.cn/" target="_blank"><img src="images/f-01.png" width="240" height="120" alt=""></a><span><a href="http://strs.gdstc.gov.cn/" target="_blank">广东省科技报告服务平台</a></span></li>
+        <li id="logo_019"><a href="http://kxjc.gdinfo.net/" target="_blank"><img src="images/f-02.png" width="240" height="120" alt="广东科技决策支撑平台"></a><span><a href="http://kxjc.gdinfo.net/" target="_blank">广东科技决策支撑平台</a></span></li>
+        <li id="logo_020"><a href="#" target="_blank"><img src="images/f-03.png" width="240" height="120" alt=""></a><span><a href="#" target="_blank">广东科技成果全文数据库</a></span></li>
+        <li class="four" id="logo_021"><a href="#" target="_blank"><img src="images/f-04.png" width="240" height="120" alt="广东科技档案数据库"></a><span><a href="#" target="_blank">广东科技档案数据库</a></span></li>
+        <li class="one" id="logo_005" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_006" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_007" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="four" id="logo_008" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="one" id="logo_009" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_010" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_011" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_012" class="four" style="background:rgba(0, 0, 0, 0.5)"></li>
+        
+        
+        
+        
+      </ul>
+    </dd>
+     <dd style="display: none;">
+     <!--国内外文献-->
+      <ul>
+        <li class="one" id="logo_022"><a href="http://www.gdstl.net/" target="_blank"><img src="images/g-01.png" width="240" height="120" alt=""></a><span><a href="http://www.gdstl.net/" target="_blank">广东省科技文献共享平台</a></span></li>
+        <li id="logo_023"><a href="http://gz.nstl.gov.cn/" target="_blank"><img src="images/g-02.png" width="240" height="120" alt="NSTL广州服务站共享平台"></a><span><a href="http://gz.nstl.gov.cn/" target="_blank">NSTL广州服务站共享平台</a></span></li>
+        <li id="logo_024"><a href="http://www.ideahome.com.cn/" target="_blank"><img src="images/g-03.png" width="240" height="120" alt=""></a><span><a href="http://www.ideahome.com.cn/" target="_blank">外刊资源服务系统</a></span></li>
+        <li class="four" id="logo_025"><a href="http://www.wanfangdata.com.cn/" target="_blank"><img src="images/g-04.png" width="240" height="120" alt=""></a><span><a href="http://www.wanfangdata.com.cn/" target="_blank">万方数据知识服务平台</a></span></li>
+        <li class="one" id="logo_026"><a href="http://www.cqvip.com/" target="_blank"><img src="images/g-05.png" width="240" height="120" alt=""></a><span><a href="http://www.cqvip.com/" target="_blank">维普资讯网</a></span></li>
+        <li id="logo_027"><a href="http://www.cnki.net/" target="_blank"><img src="images/g-06.png" width="240" height="120" alt=""></a><span><a href="http://www.cnki.net/" target="_blank">中国知网</a></span></li>
+        <li id="logo_007" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="four" id="logo_008" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="one" id="logo_009" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_010" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li id="logo_011" style="background:rgba(0, 0, 0, 0.5)"></li>
+        <li class="four" id="logo_012" style="background:rgba(0, 0, 0, 0.5)"></li> 
+      </ul>
+    </dd>
+  </dl>
+  
+ 
+</div>
+<!--logo区结束--> 
+<!-- 左右箭头开始
+<div class="prev"><img src="images/arr_left.png" width="31" height="67"></div>
+<div class="next"><img src="images/arr_right.png" width="31" height="67"></div>
+左右箭头结束
+Proquest Button END
+<span style="display:none;">
+<script src="script/tj.js"></script><script src="#" language="JavaScript"></script><script src="http://c.cnzz.com/core.php?web_id=5422368&amp;t=z" charset="utf-8" type="text/javascript"></script><a href="#" target="_blank" title="站长统计">站长统计</a>
+</span> -->
+</body></html>
